@@ -6,11 +6,13 @@ public class myBlock : MonoBehaviour
 {
     public GameObject spawnerPoint;
     public bool isEnd;
-    public List<Mesh> pool1;
+    public List<Mesh> pool1, poolEnd;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        int ycount = Random.Range(0, poolEnd.Count);
+        gameObject.GetComponent<MeshFilter>().mesh = poolEnd[ycount];
     }
 
     // Update is called once per frame

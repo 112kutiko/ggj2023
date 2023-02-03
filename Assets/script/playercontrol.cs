@@ -123,6 +123,6 @@ public class playercontrol : MonoBehaviour
     }
     public void newBegin()
     {
-        DOWNtO= Random.Range(-100, -10);
+        DOWNtO= Random.Range(-80, -10);
     }
 }

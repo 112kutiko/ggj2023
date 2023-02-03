@@ -51,6 +51,8 @@ MonoBehaviour:
   isEnd: 0
   pool1:
   - {fileID: -7160170588466018565, guid: df4af5cef3fd7de4ebc1c6ad8263b3c9, type: 3}
+  poolEnd:
+  - {fileID: 5860817362350361256, guid: df4af5cef3fd7de4ebc1c6ad8263b3c9, type: 3}
 --- !u!23 &8678443072726641327
 MeshRenderer:
   m_ObjectHideFlags: 0
