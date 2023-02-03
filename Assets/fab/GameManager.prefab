@@ -54,3 +54,4 @@ MonoBehaviour:
   old1: {fileID: 0}
   playTime: 0
   DOWNtO: 0
+  speed: 40

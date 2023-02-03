@@ -101,6 +101,7 @@ MonoBehaviour:
   spawnerPoint: {fileID: 5223047310854147870}
   isEnd: 0
   pool1: []
+  poolEnd: []
 --- !u!1 &5223047310854147870
 GameObject:
   m_ObjectHideFlags: 0
