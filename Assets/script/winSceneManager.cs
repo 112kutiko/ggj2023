@@ -12,8 +12,7 @@ public class winSceneManager : MonoBehaviour
     void Start()
     {
 
-      winIs = PlayerPrefs.GetString("winner");
-        SceneManager.LoadScene("win", LoadSceneMode.Single);
+      winIs = PlayerPrefs.GetString("winner"); 
         Tmain.text = winIs;
     }
 

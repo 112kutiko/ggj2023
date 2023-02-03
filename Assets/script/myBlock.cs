@@ -11,6 +11,10 @@ public class myBlock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (gameObject.tag == "Player")
+        {
+            return;
+        }
         int ycount = Random.Range(0, poolEnd.Count);
         gameObject.GetComponent<MeshFilter>().mesh = poolEnd[ycount];
     }

@@ -13,7 +13,7 @@ public class playercontrol : MonoBehaviour
     public static playercontrol controls;
     public bool playTime=false;
     public int DOWNtO = 0;
-
+    public float speed = 40f;
     void awake()
     {
         controls = this;
@@ -115,7 +115,7 @@ public class playercontrol : MonoBehaviour
 
         Vector3 my = Camera.main.gameObject.transform.position;
         my.y = temp.transform.position.y;
-            Camera.main.gameObject.transform.Translate(my * (Time.deltaTime*50f), Space.World);
+            Camera.main.gameObject.transform.Translate(my * (Time.deltaTime*speed), Space.World);
 
         }
         checker1(temp, spawnerAdd, i);
