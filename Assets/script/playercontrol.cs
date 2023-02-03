@@ -36,23 +36,7 @@ public class playercontrol : MonoBehaviour
     {
 
         if (playTime) { } else { return; }
-
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-            if (touch.position.x < Screen.width / 2)
-            {
-                //player 1
-                spawnRoots(players[0], spawnerAdd[0],0);
-
-            }
-            else if (touch.position.x > Screen.width / 2)
-            {
-                //player 2
-                spawnRoots(players[1], spawnerAdd[1], 1);
-
-            }
-        }
+   
         if (Input.GetKeyDown("s"))
         {
             //player 1
@@ -129,5 +113,13 @@ public class playercontrol : MonoBehaviour
     public void newBegin()
     {
         DOWNtO= Random.Range(-80, -10);
+    }
+    public void player1()
+    {
+        spawnRoots(players[0], spawnerAdd[0], 0);
+    }
+    public void player2()
+    {
+        spawnRoots(players[1], spawnerAdd[1], 1);
     }
 }
