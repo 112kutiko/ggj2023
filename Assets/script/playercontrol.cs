@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playercontrol : MonoBehaviour
 {
@@ -90,6 +91,8 @@ public class playercontrol : MonoBehaviour
             old0= temp;
             if (temp.transform.position.y < DOWNtO)
             { Debug.Log("1p");
+              PlayerPrefs.SetString("winner", "player 1 win");
+                SceneManager.LoadScene("win", LoadSceneMode.Single);
             }
         }
         else
@@ -103,6 +106,8 @@ public class playercontrol : MonoBehaviour
             if (temp.transform.position.y < DOWNtO)
             {
                 Debug.Log("2p");
+                PlayerPrefs.SetString("winner", "player 2 win");
+                SceneManager.LoadScene("win", LoadSceneMode.Single);
             }
         }
         if(Camera.main.gameObject.transform.position.y> temp.transform.position.y)
