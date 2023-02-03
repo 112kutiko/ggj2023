@@ -105,7 +105,14 @@ public class playercontrol : MonoBehaviour
                 Debug.Log("2p");
             }
         }
+        if(Camera.main.gameObject.transform.position.y> temp.transform.position.y)
+        {
 
+        Vector3 my = Camera.main.gameObject.transform.position;
+        my.y = temp.transform.position.y;
+            Camera.main.gameObject.transform.Translate(my * (Time.deltaTime*50f), Space.World);
+
+        }
         checker1(temp, spawnerAdd, i);
 
 
