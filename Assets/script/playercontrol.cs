@@ -9,8 +9,9 @@ public class playercontrol : MonoBehaviour
     public List<GameObject> spawnerAdd = new List<GameObject>();
     public GameObject Root,root2;
     public GameObject old0, old1;
-    static playercontrol controls;
-
+    public static playercontrol controls;
+    public bool playTime=false;
+    public int DOWNtO = 0;
 
     void awake()
     {
@@ -32,6 +33,8 @@ public class playercontrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (playTime) { } else { return; }
 
         if (Input.touchCount > 0)
         {
@@ -85,6 +88,9 @@ public class playercontrol : MonoBehaviour
                 old0.GetComponent<myBlock>().isEnd=true;
             }
             old0= temp;
+            if (temp.transform.position.y < DOWNtO)
+            { Debug.Log("1p");
+            }
         }
         else
         {
@@ -94,8 +100,22 @@ public class playercontrol : MonoBehaviour
                 old1.GetComponent<myBlock>().isEnd = true;
             }
             old1 = temp;
+            if (temp.transform.position.y < DOWNtO)
+            {
+                Debug.Log("2p");
+            }
         }
 
         checker1(temp, spawnerAdd, i);
+
+
+    }
+    public void changeStats(bool a)
+    {
+        playTime = a;
+    }
+    public void newBegin()
+    {
+        DOWNtO= Random.Range(-100, -10);
     }
 }

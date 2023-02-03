@@ -52,3 +52,5 @@ MonoBehaviour:
   root2: {fileID: 0}
   old0: {fileID: 0}
   old1: {fileID: 0}
+  playTime: 0
+  DOWNtO: 0
