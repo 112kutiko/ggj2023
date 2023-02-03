@@ -5,6 +5,8 @@ using UnityEngine;
 public class myBlock : MonoBehaviour
 {
     public GameObject spawnerPoint;
+    public bool isEnd;
+    public List<Mesh> pool1;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,17 @@ public class myBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameObject.tag == "player")
+        {
+            return;
+        }
+        else
+        { 
+            if (isEnd==false)
+            {
+                int ycount = Random.Range(0, pool1.Count);
+                gameObject.GetComponent<MeshFilter>().mesh = pool1[ycount];
+            }
+        }
     }
 }
