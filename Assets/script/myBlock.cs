@@ -16,16 +16,17 @@ public class myBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.tag == "player")
+        if (gameObject.tag == "Player")
         {
             return;
         }
         else
         { 
-            if (isEnd==false)
+            if (isEnd==true)
             {
                 int ycount = Random.Range(0, pool1.Count);
                 gameObject.GetComponent<MeshFilter>().mesh = pool1[ycount];
+                isEnd = false;
             }
         }
     }

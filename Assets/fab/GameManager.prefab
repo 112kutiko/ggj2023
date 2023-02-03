@@ -49,3 +49,6 @@ MonoBehaviour:
   - {fileID: 0}
   spawnerAdd: []
   Root: {fileID: 8440420080108958267, guid: bbbcea266114bf04b8b883bccf19fe10, type: 3}
+  root2: {fileID: 0}
+  old0: {fileID: 0}
+  old1: {fileID: 0}

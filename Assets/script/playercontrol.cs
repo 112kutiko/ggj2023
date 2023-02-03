@@ -80,15 +80,20 @@ public class playercontrol : MonoBehaviour
         GameObject temp= Instantiate(Root, Roots.transform.position, Quaternion.identity);
         if(i== 0)
         {
-            if(old0=null) { } else
+            if(old0==null) { } else
             {
-                temp.GetComponent<myBlock>().isEnd=true;
+                old0.GetComponent<myBlock>().isEnd=true;
             }
             old0= temp;
         }
         else
         {
-            old1= temp;
+            if (old1 ==null) { }
+            else
+            {
+                old1.GetComponent<myBlock>().isEnd = true;
+            }
+            old1 = temp;
         }
 
         checker1(temp, spawnerAdd, i);
