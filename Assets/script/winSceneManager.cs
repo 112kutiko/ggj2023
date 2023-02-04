@@ -12,10 +12,10 @@ public class winSceneManager : MonoBehaviour
     void Start()
     {
       winIs = PlayerPrefs.GetInt("winner"); 
-      if (winIs == 0 )
+      if (winIs == 1 )
         {
             pot0.SetActive(true);
-        }else if(winIs==1){
+        }else if(winIs==2){
             pot1.SetActive(true);
         }
     }
