@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnerPoint: {fileID: 8785167703069571419}
+  parentHook: {fileID: 0}
   isEnd: 0
   isfirst: 0
   pool1:
@@ -64,7 +65,7 @@ MonoBehaviour:
   - {fileID: 5860817362350361256, guid: d430304620c76d54da46ff7af940badc, type: 3}
   - {fileID: -5092634562296359247, guid: d430304620c76d54da46ff7af940badc, type: 3}
   isPlayer: 0
-  lygis: 0
+  idPlayer: 0
 --- !u!23 &8678443072726641327
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -85,7 +86,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5849007604647142739, guid: d430304620c76d54da46ff7af940badc, type: 3}
+  - {fileID: 2100000, guid: 003d6e6e0ac49ba46b3c8c817af151e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
