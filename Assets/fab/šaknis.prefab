@@ -51,7 +51,6 @@ MonoBehaviour:
   spawnerPoint: {fileID: 8785167703069571419}
   isEnd: 0
   pool1:
-  - {fileID: -7160170588466018565, guid: df4af5cef3fd7de4ebc1c6ad8263b3c9, type: 3}
   - {fileID: -7160170588466018565, guid: d430304620c76d54da46ff7af940badc, type: 3}
   - {fileID: 4147209073468704260, guid: d430304620c76d54da46ff7af940badc, type: 3}
   - {fileID: -5112296012841621442, guid: d430304620c76d54da46ff7af940badc, type: 3}
@@ -59,7 +58,6 @@ MonoBehaviour:
   - {fileID: -4091884594116376077, guid: d430304620c76d54da46ff7af940badc, type: 3}
   - {fileID: 552572648279235805, guid: d430304620c76d54da46ff7af940badc, type: 3}
   poolEnd:
-  - {fileID: 5860817362350361256, guid: df4af5cef3fd7de4ebc1c6ad8263b3c9, type: 3}
   - {fileID: -5948475122900628767, guid: d430304620c76d54da46ff7af940badc, type: 3}
   - {fileID: 5860817362350361256, guid: d430304620c76d54da46ff7af940badc, type: 3}
   - {fileID: -5092634562296359247, guid: d430304620c76d54da46ff7af940badc, type: 3}
@@ -113,7 +111,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8440420080108958267}
-  m_Mesh: {fileID: 5860817362350361256, guid: df4af5cef3fd7de4ebc1c6ad8263b3c9, type: 3}
+  m_Mesh: {fileID: -5948475122900628767, guid: d430304620c76d54da46ff7af940badc, type: 3}
 --- !u!114 &-6245149793888675094
 MonoBehaviour:
   m_ObjectHideFlags: 0
