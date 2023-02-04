@@ -111,7 +111,7 @@ public class playercontrol : NetworkBehaviour
     public void newBegin()
     { 
         DOWNtO = Random.Range(-80, -10);
-        Vector3 myTemp= new Vector3 (0, 0, 0);
+        Vector3 myTemp= new Vector3 (0, 0, -0.3f);
         myTemp.y = (float)DOWNtO-32f;
         Instantiate(water, myTemp, Quaternion.identity);
 
