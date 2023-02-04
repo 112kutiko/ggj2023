@@ -21,7 +21,7 @@ public class playercontrol : NetworkBehaviour
     [SerializeField] private AudioSource player2Click;
     [SerializeField] private GameObject Camera;
 
-    public GameObject off, on;
+    public GameObject off, on, water;
     void awake()
     {
         controls = this;
@@ -111,6 +111,10 @@ public class playercontrol : NetworkBehaviour
     public void newBegin()
     { 
         DOWNtO = Random.Range(-80, -10);
+        Vector3 myTemp= new Vector3 (0, 0, 0);
+        myTemp.y = (float)DOWNtO-32f;
+        Instantiate(water, myTemp, Quaternion.identity);
+
     }
     public void player1()
     {
