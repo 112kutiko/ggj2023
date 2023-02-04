@@ -6,8 +6,8 @@ using Unity.Netcode;
 public class myBlock : NetworkBehaviour
 {
     public GameObject spawnerPoint;
-    public bool isEnd;
-    public List<Mesh> pool1, poolEnd;
+    public bool isEnd, isfirst;
+    public List<Mesh> pool1,pool0, poolEnd;
     public bool isPlayer;  
 //    public NetworkVariable<int> clientId = new NetworkVariable<int>();
 
@@ -33,14 +33,21 @@ public class myBlock : NetworkBehaviour
             return;
         }
         else
-        { 
-            if (isEnd==true)
+        {
+            if (isEnd == true && isfirst == false)
             {
                 int ycount = Random.Range(0, pool1.Count);
                 gameObject.GetComponent<MeshFilter>().mesh = pool1[ycount];
                 isEnd = false;
             }
-        }
+            else if (isEnd == true && isfirst == true)
+            {
+                int ycount = Random.Range(0, pool0.Count);
+                gameObject.GetComponent<MeshFilter>().mesh = pool0[ycount];
+                isEnd = false;
+            }
+
+            }
     }
    
 }

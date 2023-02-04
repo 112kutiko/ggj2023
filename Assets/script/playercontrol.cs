@@ -72,9 +72,10 @@ public class playercontrol : NetworkBehaviour
         GameObject temp = Instantiate(Root, Roots.transform.position, Quaternion.identity);
         if(i== 0)
         {
-            if(old0==null) { } else
+            if(old0==null) {temp.GetComponent<myBlock>().isfirst = true; } else
             {
                 old0.GetComponent<myBlock>().isEnd=true;
+                
             }
             old0= temp;
             if (temp.transform.position.y < DOWNtO)
@@ -85,7 +86,7 @@ public class playercontrol : NetworkBehaviour
         }
         else
         {
-            if (old1 ==null) { }
+            if (old1 ==null) { temp.GetComponent<myBlock>().isfirst = true; }
             else
             {
                 old1.GetComponent<myBlock>().isEnd = true;

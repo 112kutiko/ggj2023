@@ -52,11 +52,12 @@ MonoBehaviour:
   isEnd: 0
   pool1:
   - {fileID: -7160170588466018565, guid: d430304620c76d54da46ff7af940badc, type: 3}
-  - {fileID: 4147209073468704260, guid: d430304620c76d54da46ff7af940badc, type: 3}
   - {fileID: -5112296012841621442, guid: d430304620c76d54da46ff7af940badc, type: 3}
   - {fileID: 2447208651857434748, guid: d430304620c76d54da46ff7af940badc, type: 3}
+  pool0:
   - {fileID: -4091884594116376077, guid: d430304620c76d54da46ff7af940badc, type: 3}
   - {fileID: 552572648279235805, guid: d430304620c76d54da46ff7af940badc, type: 3}
+  - {fileID: 4147209073468704260, guid: d430304620c76d54da46ff7af940badc, type: 3}
   poolEnd:
   - {fileID: -5948475122900628767, guid: d430304620c76d54da46ff7af940badc, type: 3}
   - {fileID: 5860817362350361256, guid: d430304620c76d54da46ff7af940badc, type: 3}
@@ -152,7 +153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8785167703069571419}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.996, z: 0}
+  m_LocalPosition: {x: 0.0154, y: -0.9913, z: 0.0101}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
