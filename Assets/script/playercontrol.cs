@@ -13,8 +13,7 @@ public class playercontrol : NetworkBehaviour
     public GameObject old0, old1;
     public static playercontrol controls;
     public int DOWNtO = 0;
-    public NetworkVariable<int> gilin = new NetworkVariable<int>();
-
+    public bool IsPlayable = false;
     public float speed = 40f;
     public AudioClip sound;
     public AudioSource musicA; 
@@ -25,18 +24,11 @@ public class playercontrol : NetworkBehaviour
     void awake()
     {
         controls = this;
-
+ 
     }
     // Start is called before the first frame update
     void Start()
-    {
-
-        if (PlayerPrefs.GetInt("mode") == 1)
-        {
-            on.SetActive(true);
-
-        }
-        else { off.SetActive(true); }
+    { 
 
 
     }
@@ -46,8 +38,20 @@ public class playercontrol : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-   
-        
+        if (IsPlayable == false) { return; }
+        if (Input.GetKeyDown("s"))
+        {
+            //player 1
+            soundHouse(0);
+            spawnRoots(players[0], spawnerAdd[0], 0);
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            //player 2
+          soundHouse(1);
+          spawnRoots(players[1], spawnerAdd[1], 1);
+        }
+
     }
     public void checker1(GameObject a, List<GameObject> b,int i)
     {
@@ -62,22 +66,8 @@ public class playercontrol : NetworkBehaviour
        
     }
     public  void spawnRoots(GameObject player, GameObject Roots,int i)
-    {
-        int mainUse;
-        if (PlayerPrefs.GetInt("mode") == 1)
-        {
-            mainUse=gilin.Value;
-        }
-        else
-        {
-            mainUse = DOWNtO;
-        }
-
-
-
-
-
-
+    { 
+ 
         GameObject temp = Instantiate(Root, Roots.transform.position, Quaternion.identity);
         if(i== 0)
         {
@@ -86,7 +76,7 @@ public class playercontrol : NetworkBehaviour
                 old0.GetComponent<myBlock>().isEnd=true;
             }
             old0= temp;
-            if (temp.transform.position.y < mainUse)
+            if (temp.transform.position.y < DOWNtO)
             { Debug.Log("1p");
               PlayerPrefs.SetString("winner", "player 1 win");
                 SceneManager.LoadScene("win", LoadSceneMode.Single);
@@ -100,7 +90,7 @@ public class playercontrol : NetworkBehaviour
                 old1.GetComponent<myBlock>().isEnd = true;
             }
             old1 = temp;
-            if (temp.transform.position.y < mainUse)
+            if (temp.transform.position.y < DOWNtO)
             {
                 Debug.Log("2p");
                 PlayerPrefs.SetString("winner", "player 2 win");
@@ -120,10 +110,9 @@ public class playercontrol : NetworkBehaviour
 
     }
    
-    public int newBegin()
-    {
-
-        return Random.Range(-80, -10);
+    public void newBegin()
+    { 
+        DOWNtO = Random.Range(-80, -10);
     }
     public void player1()
     {
@@ -134,12 +123,7 @@ public class playercontrol : NetworkBehaviour
     {
         spawnRoots(players[1], spawnerAdd[1], 1);
         soundHouse(1);
-    }
-    public void playOfline()
-    {
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
-        PlayerPrefs.SetInt("mode", 0);
-    }
+    } 
     public void soundHouse(int i)
     {
         if (i == 0)
@@ -151,14 +135,6 @@ public class playercontrol : NetworkBehaviour
             player2Click.Play();
         }
 
-    }
-    public override void OnNetworkSpawn()
-    {
-        if (PlayerPrefs.GetInt("mode") == 1)
-        {
-          
-                gilin.Value = newBegin();
-          
-        }
-    }
+    } 
+    public void ischange() { IsPlayable= !IsPlayable; }
 }

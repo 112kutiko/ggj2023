@@ -64,8 +64,7 @@ public class OnlineManager : NetworkBehaviour
     }
     [ClientRpc]
      public void setGameClientRpc(int i)
-    {
-        playercontrol.controls.gilin.Value = i;
+    { 
     }
 
 

@@ -13,7 +13,6 @@ public class OfflineManager : MonoBehaviour
         if (PlayerPrefs.GetInt("mode") == 0)
         {
 
-            playercontrol.controls.DOWNtO = playercontrol.controls.newBegin();
 
         }
     }
