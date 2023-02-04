@@ -6,14 +6,18 @@ using UnityEngine.UI;
 
 public class winSceneManager : MonoBehaviour
 {
-    string winIs;
-    public Text Tmain;
+    int winIs; 
+    public GameObject pot0, pot1;
     // Start is called before the first frame update
     void Start()
     {
-
-      winIs = PlayerPrefs.GetString("winner"); 
-        Tmain.text = winIs;
+      winIs = PlayerPrefs.GetInt("winner"); 
+      if (winIs == 0 )
+        {
+            pot0.SetActive(true);
+        }else if(winIs==1){
+            pot1.SetActive(true);
+        }
     }
 
     // Update is called once per frame

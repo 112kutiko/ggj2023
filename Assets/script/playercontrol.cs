@@ -79,7 +79,7 @@ public class playercontrol : NetworkBehaviour
             old0= temp;
             if (temp.transform.position.y < DOWNtO)
             { Debug.Log("1p");
-              PlayerPrefs.SetString("winner", "player 1 win");
+              PlayerPrefs.SetInt("winner", 1);
                 SceneManager.LoadScene("win", LoadSceneMode.Single);
             }
         }
@@ -94,7 +94,7 @@ public class playercontrol : NetworkBehaviour
             if (temp.transform.position.y < DOWNtO)
             {
                 Debug.Log("2p");
-                PlayerPrefs.SetString("winner", "player 2 win");
+                PlayerPrefs.SetInt("winner", 2);
                 SceneManager.LoadScene("win", LoadSceneMode.Single);
             }
         }
