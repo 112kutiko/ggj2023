@@ -8,7 +8,7 @@ public class playercontrol : MonoBehaviour
 
     public List<GameObject> players = new List<GameObject>(); 
     public List<GameObject> spawnerAdd = new List<GameObject>();
-    public GameObject Root,root2;
+    public GameObject Root;
     public GameObject old0, old1;
     public static playercontrol controls;
     public bool playTime=false;
@@ -123,9 +123,13 @@ public class playercontrol : MonoBehaviour
     public void player1()
     {
         spawnRoots(players[0], spawnerAdd[0], 0);
+        player1Click.Play();
+
     }
     public void player2()
     {
         spawnRoots(players[1], spawnerAdd[1], 1);
+        player2Click.Play();
+
     }
 }
