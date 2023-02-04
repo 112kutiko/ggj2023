@@ -16,6 +16,8 @@ public class playercontrol : MonoBehaviour
     public float speed = 40f;
     public AudioClip sound;
     public AudioSource musicA;
+    [SerializeField] private AudioSource player1Click;
+    [SerializeField] private AudioSource player2Click;
     void awake()
     {
         controls = this;
@@ -42,11 +44,13 @@ public class playercontrol : MonoBehaviour
         if (Input.GetKeyDown("s"))
         {
             //player 1
+            player1Click.Play();
             spawnRoots(players[0], spawnerAdd[0], 0);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             //player 2
+            player2Click.Play();
             spawnRoots(players[1], spawnerAdd[1], 1);
         }
 
