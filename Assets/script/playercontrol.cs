@@ -102,7 +102,10 @@ public class playercontrol : NetworkBehaviour
 
         Vector3 my = Camera.main.gameObject.transform.position;
         my.y = temp.transform.position.y;
+            my.x = 0f;
             Camera.main.gameObject.transform.Translate(my * (Time.deltaTime*speed), Space.World);
+
+
 
         }
         checker1(temp, spawnerAdd, i);
