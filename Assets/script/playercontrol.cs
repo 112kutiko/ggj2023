@@ -63,12 +63,20 @@ public class playercontrol : NetworkBehaviour
         GameObject temp = Instantiate(Root, Roots.transform.position, Quaternion.identity);
         if(i== 0)
         {
-            if(old0==null) {temp.GetComponent<myBlock>().isfirst = true; } else
+            if(old0==null) {temp.GetComponent<myBlock>().isfirst = true; temp.GetComponent<myBlock>().parentHook = null; }
+            else
             {
                 old0.GetComponent<myBlock>().isEnd=true;
-                
+                temp.GetComponent<myBlock>().parentHook = old0;
+                old0.GetComponent<myBlock>().idPlayer = 0;
             }
-            old0= temp;
+            if (old0 != null && old0.GetComponent<myBlock>().parentHook!=null)
+            {
+
+                old0.GetComponent<myBlock>().parentHook.GetComponent<myBlock>().randomlvl3();
+            }
+            old0 = temp;
+            
             if (temp.transform.position.y < DOWNtO)
             { Debug.Log("1p");
               PlayerPrefs.SetInt("winner", 1);
@@ -77,10 +85,16 @@ public class playercontrol : NetworkBehaviour
         }
         else
         {
-            if (old1 ==null) { temp.GetComponent<myBlock>().isfirst = true; }
+            if (old1 ==null) { temp.GetComponent<myBlock>().isfirst = true; temp.GetComponent<myBlock>().parentHook = null; }
             else
             {
-                old1.GetComponent<myBlock>().isEnd = true;
+                old1.GetComponent<myBlock>().isEnd = true;            old1.GetComponent<myBlock>().idPlayer = 1;
+                temp.GetComponent<myBlock>().parentHook = old1;
+            }
+            if (old1 != null && old1.GetComponent<myBlock>().parentHook != null)
+            {
+
+                old1.GetComponent<myBlock>().parentHook.GetComponent<myBlock>().randomlvl3();
             }
             old1 = temp;
             if (temp.transform.position.y < DOWNtO)

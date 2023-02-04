@@ -5,32 +5,29 @@ using Unity.Netcode;
 
 public class myBlock : NetworkBehaviour
 {
-    public GameObject spawnerPoint;
+    public GameObject spawnerPoint, parentHook;
     public bool isEnd, isfirst;
     public List<Mesh> pool1,pool0, poolEnd;
     public bool isPlayer;
-    public int lygis = 0;
-        //    public NetworkVariable<int> clientId = new NetworkVariable<int>();
-
-    // Start is called before the first frame update
+    public int idPlayer = 0;
     void Start()
-    {
-
-
+    { 
         if (gameObject.tag == "Player")
         {
             isPlayer=true;
         }
         if (isPlayer) { return; }
-        int ycount = Random.Range(0, poolEnd.Count);
-        gameObject.GetComponent<MeshFilter>().mesh = poolEnd[ycount];
-
+        randomlvl1();
+        if (parentHook != null)
+        {
+            int u = Random.Range(0, pool1.Count);
+            parentHook.GetComponent<MeshFilter>().mesh = pool1[u];
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (isPlayer==true)
+        if (isPlayer==true )
         {
             return;
         }
@@ -38,20 +35,33 @@ public class myBlock : NetworkBehaviour
         {
             if (isEnd == true && isfirst == false)
             {
-                int ycount = Random.Range(0, pool1.Count);
-                gameObject.GetComponent<MeshFilter>().mesh = pool1[ycount];
-                isEnd = false;
-                lygis = 1;
-            }
+                randomlvl2();            }
             else if (isEnd == true && isfirst == true)
             {
-                int ycount = Random.Range(0, pool0.Count);
-                gameObject.GetComponent<MeshFilter>().mesh = pool0[ycount];
-                isEnd = false;
-                lygis = 2;
+                randomlvl3();
             }
 
             }
+            
     }
    
+    public void randomlvl1()
+    {
+       int u = Random.Range(0, poolEnd.Count);
+        gameObject.GetComponent<MeshFilter>().mesh = poolEnd[u];
+    }
+    public void randomlvl2()
+    {
+        int ycount = Random.Range(0, pool1.Count);
+        gameObject.GetComponent<MeshFilter>().mesh = pool1[ycount];
+        isEnd = false; 
+    }
+    public void randomlvl3()
+    {
+        int ycount = Random.Range(0, pool0.Count);
+        gameObject.GetComponent<MeshFilter>().mesh = pool0[ycount];
+        isEnd = false;
+
+    }
+
 }
