@@ -14,6 +14,8 @@ public class playercontrol : MonoBehaviour
     public bool playTime=false;
     public int DOWNtO = 0;
     public float speed = 40f;
+    public AudioClip sound;
+    public AudioSource musicA;
     void awake()
     {
         controls = this;
@@ -103,7 +105,7 @@ public class playercontrol : MonoBehaviour
 
         }
         checker1(temp, spawnerAdd, i);
-
+        musicA.PlayOneShot(sound);
 
     }
     public void changeStats(bool a)

@@ -433,9 +433,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3959042455141809151, guid: 0b1d150559c4c1742a9c2670d4a5c2c6, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 69e73374c7171e645bc94bd473654f44, type: 3}
+    - target: {fileID: 3959042455141809151, guid: 0b1d150559c4c1742a9c2670d4a5c2c6, type: 3}
       propertyPath: speed
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 3959042455141809151, guid: 0b1d150559c4c1742a9c2670d4a5c2c6, type: 3}
+      propertyPath: musicA
+      value: 
+      objectReference: {fileID: 519420033}
     - target: {fileID: 3959042455141809151, guid: 0b1d150559c4c1742a9c2670d4a5c2c6, type: 3}
       propertyPath: players.Array.data[0]
       value: 
