@@ -19,6 +19,7 @@ public class playercontrol : NetworkBehaviour
     public AudioSource musicA; 
     [SerializeField] private AudioSource player1Click;
     [SerializeField] private AudioSource player2Click;
+    [SerializeField] private GameObject Camera;
 
     public GameObject off, on;
     void awake()
@@ -97,16 +98,10 @@ public class playercontrol : NetworkBehaviour
                 SceneManager.LoadScene("win", LoadSceneMode.Single);
             }
         }
-        if(Camera.main.gameObject.transform.position.y> temp.transform.position.y)
+        if(Camera.transform.position.y> temp.transform.position.y)
         {
-
-        Vector3 my = Camera.main.gameObject.transform.position;
-        my.y = temp.transform.position.y;
-            my.x = 0f;
-            Camera.main.gameObject.transform.Translate(my * (Time.deltaTime*speed), Space.World);
-
-
-
+            Vector3 my = new Vector3(0, Camera.transform.position.y - 0.5f, Camera.transform.position.z - 0.2f);
+            Camera.transform.position = my;
         }
         checker1(temp, spawnerAdd, i);
         musicA.PlayOneShot(sound);
