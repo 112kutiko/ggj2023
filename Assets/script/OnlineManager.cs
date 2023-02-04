@@ -14,12 +14,7 @@ public class OnlineManager : NetworkBehaviour
         {
 
             gameO.SetActive(true);
-            for (int i = 0; i < 2; i++)
-            {
-                playercontrol.controls.checker1(playercontrol.controls.players[i], playercontrol.controls.spawnerAdd, i);
-
-            }
-
+ 
 
         }
     
@@ -44,7 +39,8 @@ public class OnlineManager : NetworkBehaviour
 
 
 
-    }
+    } 
+
     [ServerRpc]
     public void mymoveServerRpc(ServerRpcParams serverRpcParams = default)
     {
@@ -56,12 +52,31 @@ public class OnlineManager : NetworkBehaviour
     {
         if (i == 0)
         {
+            //playercontrol.controls.players[0].GetComponent<myBlock>().clientId.Value = i;
             playercontrol.controls.player1();
         }
         else
         {
+        //    playercontrol.controls.players[1].GetComponent<myBlock>().clientId.Value = i;
             playercontrol.controls.player2();
         }
         
     }
+    [ClientRpc]
+     public void setGameClientRpc(int i)
+    {
+        playercontrol.controls.gilin.Value = i;
+    }
+
+
+//public override void NetworkStart()
+  //  {
+//
+//if (IsServer && NetworkManager.Singleton.ConnectedClientsList.Count==2)
+//{
+       // int tmp = playercontrol.controls.newBegin();
+//setGameClientRpc(tmp);
+      //  }
+     
+   // }
 }

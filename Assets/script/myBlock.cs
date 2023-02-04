@@ -9,7 +9,7 @@ public class myBlock : NetworkBehaviour
     public bool isEnd;
     public List<Mesh> pool1, poolEnd;
     public bool isPlayer;  
-    private NetworkVariable<int> clientId = new NetworkVariable<int>();
+    public NetworkVariable<int> clientId = new NetworkVariable<int>();
 
     // Start is called before the first frame update
     void Start()

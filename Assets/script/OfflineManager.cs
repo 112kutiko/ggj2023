@@ -12,13 +12,8 @@ public class OfflineManager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("mode") == 0)
         {
-            gameO.SetActive(true);
-            for (int i = 0; i < 2; i++)
-            {
-                playercontrol.controls.checker1(playercontrol.controls.players[i], playercontrol.controls.spawnerAdd, i);
 
-            }
-            playercontrol.controls.newBegin();
+            playercontrol.controls.DOWNtO = playercontrol.controls.newBegin();
 
         }
     }
@@ -26,7 +21,7 @@ public class OfflineManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerPrefs.GetInt("mode") != 0)
+        if (PlayerPrefs.GetInt("mode") == 0)
         { return; }
             if (Input.GetKeyDown("s"))
         {
@@ -44,4 +39,6 @@ public class OfflineManager : MonoBehaviour
 
 
     }
+
+
 }

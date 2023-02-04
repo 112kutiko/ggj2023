@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Unity.Netcode;
 
-public class playercontrol : MonoBehaviour
+public class playercontrol : NetworkBehaviour
 {
 
     public List<GameObject> players = new List<GameObject>(); 
@@ -12,11 +13,15 @@ public class playercontrol : MonoBehaviour
     public GameObject old0, old1;
     public static playercontrol controls;
     public int DOWNtO = 0;
+    public NetworkVariable<int> gilin = new NetworkVariable<int>();
+
     public float speed = 40f;
     public AudioClip sound;
     public AudioSource musicA; 
     [SerializeField] private AudioSource player1Click;
     [SerializeField] private AudioSource player2Click;
+
+    public GameObject off, on;
     void awake()
     {
         controls = this;
@@ -26,8 +31,14 @@ public class playercontrol : MonoBehaviour
     void Start()
     {
 
-     
-     
+        if (PlayerPrefs.GetInt("mode") == 1)
+        {
+            on.SetActive(true);
+
+        }
+        else { off.SetActive(true); }
+
+
     }
 
 
@@ -52,8 +63,22 @@ public class playercontrol : MonoBehaviour
     }
     public  void spawnRoots(GameObject player, GameObject Roots,int i)
     {
+        int mainUse;
+        if (PlayerPrefs.GetInt("mode") == 1)
+        {
+            mainUse=gilin.Value;
+        }
+        else
+        {
+            mainUse = DOWNtO;
+        }
 
-        GameObject temp= Instantiate(Root, Roots.transform.position, Quaternion.identity);
+
+
+
+
+
+        GameObject temp = Instantiate(Root, Roots.transform.position, Quaternion.identity);
         if(i== 0)
         {
             if(old0==null) { } else
@@ -61,7 +86,7 @@ public class playercontrol : MonoBehaviour
                 old0.GetComponent<myBlock>().isEnd=true;
             }
             old0= temp;
-            if (temp.transform.position.y < DOWNtO)
+            if (temp.transform.position.y < mainUse)
             { Debug.Log("1p");
               PlayerPrefs.SetString("winner", "player 1 win");
                 SceneManager.LoadScene("win", LoadSceneMode.Single);
@@ -75,7 +100,7 @@ public class playercontrol : MonoBehaviour
                 old1.GetComponent<myBlock>().isEnd = true;
             }
             old1 = temp;
-            if (temp.transform.position.y < DOWNtO)
+            if (temp.transform.position.y < mainUse)
             {
                 Debug.Log("2p");
                 PlayerPrefs.SetString("winner", "player 2 win");
@@ -95,9 +120,10 @@ public class playercontrol : MonoBehaviour
 
     }
    
-    public void newBegin()
+    public int newBegin()
     {
-        DOWNtO= Random.Range(-80, -10);
+
+        return Random.Range(-80, -10);
     }
     public void player1()
     {
@@ -126,5 +152,13 @@ public class playercontrol : MonoBehaviour
         }
 
     }
-
+    public override void OnNetworkSpawn()
+    {
+        if (PlayerPrefs.GetInt("mode") == 1)
+        {
+          
+                gilin.Value = newBegin();
+          
+        }
+    }
 }
