@@ -1940,7 +1940,7 @@ MonoBehaviour:
   DOWNtO: 0
   IsPlayable: 0
   speed: 30
-  sound: {fileID: 8300000, guid: 69e73374c7171e645bc94bd473654f44, type: 3}
+  sound: {fileID: 8300000, guid: 5384d7ae60dc12141aac87ee4a840f31, type: 3}
   musicA: {fileID: 519420033}
   player1Click: {fileID: 1447305400}
   player2Click: {fileID: 1370940638}
