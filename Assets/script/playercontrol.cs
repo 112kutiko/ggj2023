@@ -11,26 +11,23 @@ public class playercontrol : MonoBehaviour
     public GameObject Root;
     public GameObject old0, old1;
     public static playercontrol controls;
-    public bool playTime=false;
     public int DOWNtO = 0;
     public float speed = 40f;
     public AudioClip sound;
-    public AudioSource musicA;
+    public AudioSource musicA; 
     [SerializeField] private AudioSource player1Click;
     [SerializeField] private AudioSource player2Click;
     void awake()
     {
         controls = this;
+
     }
     // Start is called before the first frame update
     void Start()
     {
-        for(int i =0;i<2; i++)
-        {
-            Debug.Log(i);
-            checker1(players[i], spawnerAdd,i);
-           
-        }
+
+     
+     
     }
 
 
@@ -38,23 +35,8 @@ public class playercontrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (playTime) { } else { return; }
    
-        if (Input.GetKeyDown("s"))
-        {
-            //player 1
-            player1Click.Play();
-            spawnRoots(players[0], spawnerAdd[0], 0);
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            //player 2
-            player2Click.Play();
-            spawnRoots(players[1], spawnerAdd[1], 1);
-        }
-
-
+        
     }
     public void checker1(GameObject a, List<GameObject> b,int i)
     {
@@ -112,10 +94,7 @@ public class playercontrol : MonoBehaviour
         musicA.PlayOneShot(sound);
 
     }
-    public void changeStats(bool a)
-    {
-        playTime = a;
-    }
+   
     public void newBegin()
     {
         DOWNtO= Random.Range(-80, -10);
@@ -123,13 +102,29 @@ public class playercontrol : MonoBehaviour
     public void player1()
     {
         spawnRoots(players[0], spawnerAdd[0], 0);
-        player1Click.Play();
-
+        soundHouse(0);
     }
     public void player2()
     {
         spawnRoots(players[1], spawnerAdd[1], 1);
-        player2Click.Play();
+        soundHouse(1);
+    }
+    public void playOfline()
+    {
+        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        PlayerPrefs.SetInt("mode", 0);
+    }
+    public void soundHouse(int i)
+    {
+        if (i == 0)
+        {
+            player1Click.Play();
+        }
+        else
+        {
+            player2Click.Play();
+        }
 
     }
+
 }
