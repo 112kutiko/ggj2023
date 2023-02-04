@@ -96,8 +96,6 @@ public class playercontrol : NetworkBehaviour
             Camera.transform.position = my;
         }
         checker1(temp, spawnerAdd, i);
-        musicA.PlayOneShot(sound);
-
     }
    
     public void newBegin()
