@@ -52,10 +52,18 @@ MonoBehaviour:
   isEnd: 0
   pool1:
   - {fileID: -7160170588466018565, guid: df4af5cef3fd7de4ebc1c6ad8263b3c9, type: 3}
+  - {fileID: -7160170588466018565, guid: d430304620c76d54da46ff7af940badc, type: 3}
+  - {fileID: 4147209073468704260, guid: d430304620c76d54da46ff7af940badc, type: 3}
+  - {fileID: -5112296012841621442, guid: d430304620c76d54da46ff7af940badc, type: 3}
+  - {fileID: 2447208651857434748, guid: d430304620c76d54da46ff7af940badc, type: 3}
+  - {fileID: -4091884594116376077, guid: d430304620c76d54da46ff7af940badc, type: 3}
+  - {fileID: 552572648279235805, guid: d430304620c76d54da46ff7af940badc, type: 3}
   poolEnd:
   - {fileID: 5860817362350361256, guid: df4af5cef3fd7de4ebc1c6ad8263b3c9, type: 3}
+  - {fileID: -5948475122900628767, guid: d430304620c76d54da46ff7af940badc, type: 3}
+  - {fileID: 5860817362350361256, guid: d430304620c76d54da46ff7af940badc, type: 3}
+  - {fileID: -5092634562296359247, guid: d430304620c76d54da46ff7af940badc, type: 3}
   isPlayer: 0
-  PlayerID: 0
 --- !u!23 &8678443072726641327
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -76,7 +84,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 93098ac196e032d4e9574bce68b10752, type: 2}
+  - {fileID: -5849007604647142739, guid: d430304620c76d54da46ff7af940badc, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
