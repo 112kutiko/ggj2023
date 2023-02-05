@@ -941,10 +941,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1128669706}
     m_Modifications:
-    - target: {fileID: -7628978429621774441, guid: 250c782bd26150e438a068ad314740b5, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 2285169560
-      objectReference: {fileID: 0}
     - target: {fileID: 2918948878526591588, guid: 250c782bd26150e438a068ad314740b5, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 1993847188
@@ -2159,10 +2155,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1128669706}
     m_Modifications:
-    - target: {fileID: -7628978429621774441, guid: 250c782bd26150e438a068ad314740b5, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 3565189452
-      objectReference: {fileID: 0}
     - target: {fileID: 2918948878526591588, guid: 250c782bd26150e438a068ad314740b5, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 202130138
@@ -2227,9 +2219,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: cc5c6beca283ddb4d8bd1bda29c6fc5a, type: 2}
-    m_RemovedComponents:
-    - {fileID: 2918948878526591588, guid: 250c782bd26150e438a068ad314740b5, type: 3}
-    - {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 250c782bd26150e438a068ad314740b5, type: 3}
 --- !u!1 &2021999668 stripped
 GameObject:
