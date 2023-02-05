@@ -121,11 +121,19 @@ public class playercontrol : NetworkBehaviour
     }
     public void player1()
     {
+        if (Application.platform != RuntimePlatform.Android)
+        {
+            return;
+        }
         spawnRoots(players[0], spawnerAdd[0], 0);
         soundHouse(0);
     }
     public void player2()
     {
+        if (Application.platform != RuntimePlatform.Android)
+        {
+            return;
+        }
         spawnRoots(players[1], spawnerAdd[1], 1);
         soundHouse(1);
     } 
