@@ -13,8 +13,7 @@ public class playercontrol : NetworkBehaviour
     public GameObject old0, old1;
     public static playercontrol controls;
     public int DOWNtO = 0;
-    public bool IsPlayable = false;
-    public float speed = 40f;
+    public bool IsPlayable = false; 
     public AudioClip sound;
     public AudioSource musicA; 
     [SerializeField] private AudioSource player1Click;
