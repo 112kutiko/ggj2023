@@ -1,4 +1,4 @@
-Library: A:\GameJams\LT 2023\02.03~05\ggj2023\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
+Library: C:\projektai\unity_projektai\ggj2023\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
 --platform=Windows
 --backend=burst-llvm-14
 --target=X64_SSE2
@@ -136,8 +136,8 @@ Library: A:\GameJams\LT 2023\02.03~05\ggj2023\Temp\StagingArea\Data\Plugins\x86_
 --compilation-defines=COM_UNITY_MODULES_PHYSICS2D
 --linker-options=PdbAltPath="ThirstyRoots _Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=A:\GameJams\LT 2023\02.03~05\ggj2023\Temp\Burst
---output=A:\GameJams\LT 2023\02.03~05\ggj2023\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
+--temp-folder=C:\projektai\unity_projektai\ggj2023\Temp\Burst
+--output=C:\projektai\unity_projektai\ggj2023\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 --pdb-search-paths=Temp/ManagedSymbols/
 
@@ -377,8 +377,8 @@ Library: A:\GameJams\LT 2023\02.03~05\ggj2023\Temp\StagingArea\Data\Plugins\x86_
 --compilation-defines=COM_UNITY_MODULES_PHYSICS2D
 --linker-options=PdbAltPath="ThirstyRoots _Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=A:\GameJams\LT 2023\02.03~05\ggj2023\Temp\Burst
---output=A:\GameJams\LT 2023\02.03~05\ggj2023\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
+--temp-folder=C:\projektai\unity_projektai\ggj2023\Temp\Burst
+--output=C:\projektai\unity_projektai\ggj2023\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 --pdb-search-paths=Temp/ManagedSymbols/
 
