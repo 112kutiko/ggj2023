@@ -150,5 +150,4 @@ public class playercontrol : NetworkBehaviour
 
     } 
     public void ischange() { IsPlayable= !IsPlayable; }
-    public void Quit(){Application.Quit();Debug.LogError("Application.Quit()");}
 }
