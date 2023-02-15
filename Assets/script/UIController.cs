@@ -37,8 +37,8 @@ public class UIController : MonoBehaviour
     }
     private void updateAudioImage()
     {
-        if(audioSource[0].mute==true) { ButtonOfAudio.GetComponent<Image>().sprite = unmute; }
-        else { ButtonOfAudio.GetComponent<Image>().sprite = mute; }
+        if(audioSource[0].mute==true) { ButtonOfAudio.GetComponent<Image>().sprite = mute; }
+        else { ButtonOfAudio.GetComponent<Image>().sprite = unmute; }
     }
 
 }
